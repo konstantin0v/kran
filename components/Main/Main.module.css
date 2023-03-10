@@ -75,3 +75,40 @@
   display: block;
   margin: 0 auto;
 }
+@media (max-width: 800px) {
+  .forms {
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  .inputs,
+  .inputs_sec,
+  .inputs_three {
+    width: 90%;
+    margin: 15px auto;
+  }
+  .labels {
+    text-align: center;
+  }
+  .submits {
+    width: 30%;
+    margin: 0 auto;
+  }
+  .err {
+    max-width: 70%;
+  }
+  .suc {
+    max-width: 90%;
+  }
+  .suc h4 {
+    font-size: 10px;
+    text-align: left;
+  }
+  .imgs {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  .subtitle {
+    margin-bottom: 10px;
+  }
+}

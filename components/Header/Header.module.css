@@ -3,3 +3,8 @@
   text-align: center;
   margin: 20px 0 40px;
 }
+@media (max-width: 800px) {
+  .title {
+    margin: 20px 30px;
+  }
+}
