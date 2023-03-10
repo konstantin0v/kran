@@ -288,7 +288,9 @@ const Main = () => {
         />
         <input className={styles.submits} type="submit" value="Получить BNB" />
       </form>
-      <h2 className={styles.subtitle}>Добавить пользователя в вайтлист</h2>
+      <h2 className={styles.subtitle}>
+        Добавить пользователя в вайтлист,только для owner
+      </h2>
       <form className={styles.forms} onSubmit={submitWhitePapper}>
         <label className={styles.labels} htmlFor="addresForWhiteList">
           Address:{" "}
