@@ -346,7 +346,7 @@ const Main = () => {
       )}
       {checkMessage && <h3 className={styles.check}>Вы в списках</h3>}
       {checkMessageErr && <h3 className={styles.check}>Упс! Вы кто?</h3>}
-      {!errorMessage && !sucMessage && !checkMessage && (
+      {!errorMessage && !sucMessage && !checkMessage && !checkMessageErr && (
         <Image
           src={omg}
           width={500}
