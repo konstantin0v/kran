@@ -260,8 +260,12 @@ const Main = () => {
     }
     try {
       const response = await contractFaucet.whitePapper(checkAddress);
-      console.log("вы в списках!");
-      setCheckMessage(true);
+      if (response.toString() == 0) {
+        console.log("попался вор");
+        setErrorMessage(true);
+      } else {
+        setCheckMessage(true);
+      }
     } catch (error) {
       setErrorMessage(true);
       console.error(error);
