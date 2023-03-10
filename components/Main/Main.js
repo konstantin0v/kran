@@ -261,7 +261,6 @@ const Main = () => {
     try {
       const response = await contractFaucet.whitePapper(checkAddress);
       if (response.toString() == 0) {
-        console.log("попался вор");
         setErrorMessage(true);
       } else {
         setCheckMessage(true);
