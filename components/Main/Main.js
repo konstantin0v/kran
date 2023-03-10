@@ -316,7 +316,7 @@ const Main = () => {
         />
         <input className={styles.submits} type="submit" value="Добавить" />
       </form>
-      <h2 className={styles.subtitle}>Найди себя в списках</h2>
+      <h2 className={styles.subtitle}>Найти себя в списках</h2>
       <form className={styles.forms} onSubmit={submitCheck}>
         <label className={styles.labels} htmlFor="addresForCheck">
           Your address:
