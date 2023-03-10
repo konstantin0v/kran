@@ -8,6 +8,7 @@ const Main = () => {
   const [errorMessage, setErrorMessage] = useState(false);
   const [sucMessage, setSucMessage] = useState(false);
   const [checkMessage, setCheckMessage] = useState(false);
+  const [checkMessageErr, setCheckMessageErr] = useState(false);
   const [hash, setHash] = useState("");
 
   const payRef = useRef();
@@ -186,6 +187,7 @@ const Main = () => {
     setErrorMessage(false);
     setSucMessage(false);
     setCheckMessage(false);
+    setCheckMessageErr(false);
     signer = await provider.getSigner();
     const contractFaucetWithSigner = new ethers.Contract(
       contractAddress,
@@ -214,6 +216,7 @@ const Main = () => {
     setErrorMessage(false);
     setSucMessage(false);
     setCheckMessage(false);
+    setCheckMessageErr(false);
     signer = await provider.getSigner();
     const contractFaucetWithSigner = new ethers.Contract(
       contractAddress,
@@ -246,6 +249,7 @@ const Main = () => {
     setErrorMessage(false);
     setSucMessage(false);
     setCheckMessage(false);
+    setCheckMessageErr(false);
     const contractFaucet = new ethers.Contract(
       contractAddress,
       contractAbi,
@@ -261,7 +265,7 @@ const Main = () => {
     try {
       const response = await contractFaucet.whitePapper(checkAddress);
       if (response.toString() == 0) {
-        setErrorMessage(true);
+        setCheckMessageErr(true);
       } else {
         setCheckMessage(true);
       }
@@ -289,7 +293,7 @@ const Main = () => {
         <input className={styles.submits} type="submit" value="Получить BNB" />
       </form>
       <h2 className={styles.subtitle}>
-        Добавить пользователя в вайтлист,только для owner
+        Добавить пользователя в вайтлист - только для owner
       </h2>
       <form className={styles.forms} onSubmit={submitWhitePapper}>
         <label className={styles.labels} htmlFor="addresForWhiteList">
@@ -341,6 +345,7 @@ const Main = () => {
         </div>
       )}
       {checkMessage && <h3 className={styles.check}>Вы в списках</h3>}
+      {checkMessageErr && <h3 className={styles.check}>Упс! Вы кто?</h3>}
       {!errorMessage && !sucMessage && !checkMessage && (
         <Image
           src={omg}
